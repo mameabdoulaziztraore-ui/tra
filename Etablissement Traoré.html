@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA AGRO-BUSINESS Etablissement Traoré</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        /* Header vert foncé comme sur ta capture */
+        .top-header {
+            background: #1B5E20;
+            padding: 1.2rem 0;
+            color: white;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .brand img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        
+        .brand-text h1 {
+            font-size: 2rem;
+            color: white;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+        
+        .brand-text span {
+            display: block;
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 400;
+        }
+        
+        /* Menu bandeau jaune-vert */
+        nav {
+            background: #C5E063;
+            padding: 1rem 0;
+            border-bottom: 4px solid #2E7D32;
+        }
+        
+        nav .container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        nav a {
+            color: #1B5E20;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Section Accueil */
+        #accueil {
+            padding: 3rem 0;
+            background: #F9F9F9;
+        }
+        
+        #accueil h2 {
+            color: #2E7D32;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        #accueil p {
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
+        
+        /* Section Produits */
+        #produits {
+            padding: 3rem 0;
+        }
+        
+        #produits h2 {
+            color: #2E7D32;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        .product-card {
+            display: flex;
+            border: 2px solid #C5E063;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .product-image {
+            width: 40%;
+            min-width: 250px;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .product-info {
+            width: 60%;
+            padding: 1.5rem 2rem;
+        }
+        
+        .product-info .category {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-info h3 {
+            color: #1B5E20;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-info h4 {
+            color: #333;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .product-info ul {
+            padding-left: 1.2rem;
+        }
+        
+        .product-info li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Section Contact */
+        #contact {
+            background: #2E7D32;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        #contact h2 {
+            color: #FFEB3B;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .contact-info strong {
+            color: #FFEB3B;
+        }
+        
+        form input, form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        form button {
+            background: #FFEB3B;
+            color: #1B5E20;
+            border: none;
+            padding: 0.9rem 1.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        form button:hover {
+            background: #FDD835;
+        }
+        
+        footer {
+            background: #1B5E20;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive mobile */
+        @media (max-width: 768px) {
+            .product-card {
+                flex-direction: column;
+            }
+            .product-image, .product-info {
+                width: 100%;
+            }
+            nav .container {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .brand {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header avec logo -->
+    <div class="top-header">
+        <div class="container">
+            <div class="brand">
+                <img src="image/logo.jpeg" alt="Logo ADA AGRO-BUSINESS">
+                <div class="brand-text">
+                    <h1>ADA AGRO-BUSINESS
+                        <span>Etablissement Traoré</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <nav>
+        <div class="container">
+            <a href="#accueil">Accueil</a>
+            <a href="#produits">Produits</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil">
+        <div class="container">
+            <h2>Bienvenue chez ADA AGRO-BUSINESS</h2>
+            <p>
+                <strong>ADA AGRO-BUSINESS Etablissement Traoré</strong> est votre fournisseur de confiance en semences certifiées et matériaux agricoles au Sénégal. 
+                Nous accompagnons les agriculteurs, coopératives et exploitations avec des produits de qualité pour améliorer les rendements et moderniser l'agriculture. 
+                Notre mission : vous fournir les meilleurs outils pour une agriculture performante et durable.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Produits -->
+    <section id="produits">
+        <div class="container">
+            <h2>Produits</h2>
+            
+            <!-- Produit 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="image/oignon.jpeg" alt="OIGNON ROUGE MORADA DE AMPOSTA">
+                </div>
+                <div class="product-info">
+                    <div class="category">Semences agricoles</div>
+                    <h3>OIGNON ROUGE MORADA DE AMPOSTA</h3>
+                    <h4>Caractéristiques :</h4>
+                    <ul>
+                    C'est une variété Epagnole réputée pour sa saveur douce, sucrée et sa couleurrouge violacée. <br>
+                    Adapté aux régions à hivers doux, il produit de gros bulbes ronds (6-8CM) très compacts, excellents pour la conservation (plus de 6 mois). <br>
+                    Idéal cru en salade ou cuit.
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="image/cynodon.jpeg" alt="CYNODON DACTYLON">
+                </div>
+                <div class="product-info">
+                    <div class="category">Semences agricoles</div>
+                    <h3>CYNODON DACTYLON</h3>
+                    <h4>Caractéristiques :</h4>
+                    <ul>
+                      C'est une graminée vivace tropicale idéale pour les climats chauds et secs, réputé pour sa très haute résistance à la sécheresse,au piétinement et sa capacité d'auto réparation. <br>
+                      Il forme un gazon dense et fin, parfait pour les zones ensoleillées, les terrains de sport et les jardins nécessitant peu d'eau.
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez-nous</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><strong>Adresse :</strong> Poste Thiaroye, Dakar, Sénégal</p>
+                    <p><strong>Téléphone :</strong> +221 77 062 59 12</p>
+                    <p><strong>Email :</strong> mameabdoulaziztraore@gmail.com</p>
+                    <p><strong>Horaires :</strong> Lun - Sam : 8h00 - 18h00</p> <br>
+                    Dim : 8h00 - 15h00
+                </div>
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/mameabdoulaziztraore@gmail.com" method="POST">
+                        <input type="text" name="Nom" placeholder="Votre nom" required>
+                        <input type="email" name="Email" placeholder="Votre email" required>
+                        <input type="tel" name="Téléphone" placeholder="Votre téléphone">
+                        <textarea name="Message" rows="4" placeholder="Votre message..." required></textarea>
+                        
+                        <input type="hidden" name="_subject" value="Nouveau message ADA AGRO-BUSINESS">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <button type="submit">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ADA AGRO-BUSINESS Etablissement Traoré. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
